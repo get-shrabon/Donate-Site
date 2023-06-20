@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="Bootstrap-Link/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/337002c4cc.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 </head>
 <body>
 <!-- Header Here -->
@@ -102,6 +103,15 @@
 </section>
 <!-- Donate Today Section End -->
 
+    <!-- Area Seeing Service Section Here -->
+<section class="d-flex justify-content-center video-map">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28911.541286806914!2d91.38329003341836!3d25.0699324957676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3750daf49ba21823%3A0x3180c8d4ddeb5b9b!2sSunamganj!5e0!3m2!1sen!2sbd!4v1687256771565!5m2!1sen!2sbd" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <div>
+    <iframe  width="560" height="315" src="https://www.youtube.com/embed/xSryfJfP3WI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ></iframe>
+  </div>
+</section>
+<!-- Area Seeing Service Section End -->
+
 <!-- Donate PLan Section Here -->
 <section class="container mb-5 pb-5">
 <h2 class="text-center fs-1 fw-bold">Our Donate Plan</h2>
@@ -153,6 +163,54 @@
 </section>
 <!-- Blog Section End -->
 
+<!-- Image Swiper Slide Section Here -->
+<section class="container mt-5 mb-5 swiper-slide">
+<div class="container">
+  <div #swiperRef="" class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="images/swiper-slide-img/1.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="images/swiper-slide-img/2.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="images/swiper-slide-img/3.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="images/swiper-slide-img/4.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="images/swiper-slide-img/5.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="images/swiper-slide-img/6.png" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="images/swiper-slide-img/7.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="images/swiper-slide-img/8.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="images/swiper-slide-img/9.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="images/swiper-slide-img/10.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="images/swiper-slide-img/11.jpg" alt="">
+      </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+</div>
+</section>
+<!-- Image Swiper Slide Section End -->
+    
 <!-- Update Section Here -->
 <section class="container text-center">
     <h2 class="fw-bold fs-1"> Get My Update</h2>
@@ -187,5 +245,63 @@
 
     <!-- javascript link here -->
     <script src="Javascrip-Link/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        centeredSlides: true,
+        spaceBetween: 30,
+        pagination: {
+          el: ".swiper-pagination",
+          type: "fraction",
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+        delay: 2500,
+        disableOnInteraction: true
+      },
+      });
+  
+      var appendNumber = 4;
+      var prependNumber = 1;
+      document
+        .querySelector(".prepend-2-slides")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          swiper.prependSlide([
+            '<div class="swiper-slide">Slide ' + --prependNumber + "</div>",
+            '<div class="swiper-slide">Slide ' + --prependNumber + "</div>",
+          ]);
+        });
+      document
+        .querySelector(".prepend-slide")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          swiper.prependSlide(
+            '<div class="swiper-slide">Slide ' + --prependNumber + "</div>"
+          );
+        });
+      document
+        .querySelector(".append-slide")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          swiper.appendSlide(
+            '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>"
+          );
+        });
+      document
+        .querySelector(".append-2-slides")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          swiper.appendSlide([
+            '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>",
+            '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>",
+          ]);
+          
+        });
+    </script>
 </body>
 </html>
